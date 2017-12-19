@@ -1,0 +1,55 @@
+//Main theme colors
+$primary-color: #232c64;
+$secondary-color: #fff;
+$success-color: #8fc73e;
+$info-color: #17a2b8;
+$warning-color: #ff4222;
+$danger-color: #dd2b4a;
+$dark: #000;
+
+$ui-colors: (
+    primary: $primary-color,
+    secondary: $secondary-color,
+    success: $success-color,
+    info: $info-color,
+    warning: $warning-color,
+    danger: $danger-color
+);
+
+$section-bg: (
+    body: $secondary-color,
+);
+
+//Fonts colors
+$color-secondary: $secondary-color !default;
+$color-inverse: $dark !default;
+
+$default-text-color: $dark;
+
+//Background classes
+@each $color, $value in $ui-colors {
+
+    .bg-#{$color} {
+        background: $value;
+
+        &:focus {
+            background: $value;
+        }
+    }
+}
+
+//Buttons variants
+@each $color, $value in $ui-colors {
+
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}
+
+//Font color classes
+@each $color, $value in $ui-colors {
+
+    .color-#{$color} {
+        color: $value;
+    }
+}
