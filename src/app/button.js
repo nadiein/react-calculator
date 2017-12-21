@@ -6,8 +6,4 @@ function Button({button}) {
   );
 }
 
-Button.propTypes = {
-  button: React.PropTypes.object.isRequired
-};
-
 export default Button;

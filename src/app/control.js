@@ -6,8 +6,4 @@ function Control({control}) {
   );
 }
 
-Control.propTypes = {
-  control: React.PropTypes.object.isRequired
-};
-
 export default Control;

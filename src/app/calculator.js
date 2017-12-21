@@ -16,8 +16,11 @@ export class Calculator extends Component {
     const {displayValue} = this.state;
     return (
       <div>
-        <Display value={displayValue}/>
-        <Buttons/>
+        <div>
+          {displayValue}
+        </div>
+        <button onClick={() => this.inputDigit(11)}>11</button>
+        <Buttons onClick={() => this.inputDigit(1)}/>
         <Controls/>
       </div>
     );
