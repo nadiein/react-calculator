@@ -1,5 +1,133 @@
 #root {
-    width: 360px;
-    height: 100vh;
+    width: 100%;
+    min-height: 600px;
+}
+
+.calc-cont {
+    position: relative;
+    max-width: 360px;
+    height: 100%;
+    margin: 0 auto;
     background: $calculator center / contain no-repeat;
+}
+
+.calc-display {
+    position: absolute;
+}
+
+.calc-display {
+    top: 115px;
+    right: 0;
+    width: 100%;
+    padding: 0 40px;
+    font-size: em(90);
+    text-overflow: ellepsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.calc-btn-group {
+    position: relative;
+    height: 100%;
+
+    .btn {
+        position: absolute;
+        font-size: 0;
+
+        &:focus,
+        &:active,
+        &:hover {
+            outline: none;
+            border: 0;
+            box-shadow: none;
+            background: transparent;
+            color: transparent;
+        }
+    }
+}
+
+.btn-square,
+.btn-off {
+    bottom: 330px;
+}
+
+.btn-mc,
+.btn-mr,
+.btn-m-del,
+.btn-m-add,
+.btn-division {
+    bottom: 270px;
+}
+
+.btn-percent,
+.btn-7,
+.btn-8,
+.btn-9,
+.btn-multiplication {
+    bottom: 210px;
+}
+
+.btn-sign-toggle,
+.btn-4,
+.btn-5,
+.btn-6,
+.btn-subtraction {
+    bottom: 155px;
+}
+
+.btn-clear,
+.btn-1,
+.btn-2,
+.btn-3 {
+    bottom: 95px;
+}
+
+.btn-on,
+.btn-point,
+.btn-equal,
+.btn-0,
+.btn-addition {
+    bottom: 35px;
+}
+
+.btn-on,
+.btn-clear,
+.btn-sign-toggle,
+.btn-percent,
+.btn-mc {
+    left: 25px;
+}
+
+.btn-0,
+.btn-1,
+.btn-4,
+.btn-7,
+.btn-mr {
+    left: 90px;
+}
+
+.btn-point,
+.btn-2,
+.btn-5,
+.btn-8,
+.btn-m-del {
+    right: 155px;
+}
+
+.btn-equal,
+.btn-3,
+.btn-6,
+.btn-9,
+.btn-m-add,
+.btn-square {
+    right: 90px;
+}
+
+.btn-addition,
+.btn-division,
+.btn-subtraction,
+.btn-multiplication,
+.btn-off {
+    right: 25px;
 }

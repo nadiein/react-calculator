@@ -7,6 +7,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './styles/app.scss';
 
 ReactDOM.render(
-  <Calculator/>,
-  document.getElementById('root')
+    <Calculator/>,
+    document.getElementById('root')
 );

@@ -15,16 +15,19 @@
 }
 
 .btn-lg {
-    @include button-size(40px 0, 40px 0, em(18, 18), 1, 0);
+    @include button-size(0, 0, em(18, 18), 1, 0);
     min-width: 55px;
+    height: 105px;
 }
 
 .btn-sm {
-    @include button-size(15px 0, 15px 0, em(18, 18), 1, 0);
-    min-width: 50px;
+    @include button-size(0, 0, em(18, 18), 1, 0);
+    min-width: 55px;
+    height: 45px;
 }
 
 .btn-xs {
-    @include button-size(8px 0, 8px 0, em(18, 18), 1, 0);
+    @include button-size(0, 0, em(18, 18), 1, 0);
     min-width: 55px;
+    height: 35px;
 }
