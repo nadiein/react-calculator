@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
 
 export class Display extends Component {
+  state = {
+    displayValue: '0'
+  }
+  inputDigit(digit) {
+    const {displayValue} = this.state;
+    this.setState({
+      displayValue: String(digit)
+    });
+  }
   render() {
-    const {value, props} = this.props;
-    let displayValue = value;
-    const match = value.match(/\.\d*?(0*)$/);
-    if (match) {
-      displayValue += (/[1-9]/).test(match[0]) ? match[1] : match[0];
-    }
+    const {displayValue} = this.state;
     return (
-      <div {...props} className="calculator-display">
-        {displayValue}
-      </div>
+      <div>{displayValue}</div>
     );
   }
 }
-
-Display.propTypes = {
-  value: React.PropTypes.string.isRequired,
-  props: React.PropTypes.object.isRequired
-};

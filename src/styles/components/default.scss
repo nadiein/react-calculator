@@ -11,9 +11,10 @@ body {
     min-height: 100%;
     color: $default-text-color;
     font: $default-font-weight normal $default-font-size/$default-line-height $default-font-family;
-    background: lightgrey;
+    background: linear-gradient(to bottom, #00695C 0%, #00897B 100%);
+    perspective: 1000;
 
     @include media-breakpoint-down(sm) {
-        font-size: 14px;
+        font-size: em(14);
     }
 }

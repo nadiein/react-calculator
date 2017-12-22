@@ -1,23 +1,9 @@
 //Main theme colors
-$primary-color: #232c64;
 $secondary-color: #fff;
-$success-color: #8fc73e;
-$info-color: #17a2b8;
-$warning-color: #ff4222;
-$danger-color: #dd2b4a;
 $dark: #000;
 
 $ui-colors: (
-    primary: $primary-color,
-    secondary: $secondary-color,
-    success: $success-color,
-    info: $info-color,
-    warning: $warning-color,
-    danger: $danger-color
-);
-
-$section-bg: (
-    body: $secondary-color,
+    transparent: transparent
 );
 
 //Fonts colors
