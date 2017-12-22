@@ -148,7 +148,7 @@ export class Calculator extends Component {
                     <button className="btn btn-transparent btn-sm btn-clear" onClick={() => this.inputClear()}>C</button>
                     <button className="btn btn-transparent btn-sm btn-1" onClick={() => this.inputDigit(1)}>1</button>
                     <button className="btn btn-transparent btn-sm btn-2" onClick={() => this.inputDigit(2)}>2</button>
-                    <button className="btn btn-transparent btn-sm btn-4" onClick={() => this.inputDigit(3)}>3</button>
+                    <button className="btn btn-transparent btn-sm btn-3" onClick={() => this.inputDigit(3)}>3</button>
                     <button className="btn btn-transparent btn-sm btn-on" onClick={() => this.inputOn()}>AC</button>
                     <button className="btn btn-transparent btn-sm btn-0" onClick={() => this.inputDigit(0)}>0</button>
                     <button className="btn btn-transparent btn-sm btn-point" onClick={() => this.inputDot()}>.</button>
