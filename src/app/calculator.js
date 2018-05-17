@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import Button from './button';
+import axios from 'axios';
+
+import data from './data';
 
 export class Calculator extends Component {
     state = {
@@ -6,7 +10,21 @@ export class Calculator extends Component {
         checkForNewInput: false,
         value: null,
         control: null,
-        turnedOn: false
+        turnedOn: false,
+        items: []
+    }
+
+    componentDidMount() {
+        axios.get(data)
+          .then((response) => {
+            console.log(response.data);
+            this.setState({
+                items: response
+            })
+          })
+          .catch((error) => {
+            console.log(error);
+          });
     }
 
     inputDigit(digit) {
@@ -45,15 +63,11 @@ export class Calculator extends Component {
                 displayValue: '0', 
                 turnedOn: true
             });
-        } else {
-            this.setState({
-                displayValue: '',
-                turnedOn: false
-            });
-        }
+        } 
+
         this.setState({
-            displayValue: '0',
-            turnedOn: true
+            displayValue: '',
+            turnedOn: false
         });
     }
 
@@ -123,12 +137,13 @@ export class Calculator extends Component {
     }
 
     render() {
-        const {displayValue} = this.state;
+        const {displayValue, items} = this.state;
         return (
             <div className="d-flex flex-column calc-cont">
                 <div className="calc-display">{displayValue}</div>
                 <div className="d-flex flex-row flex-wrap calc-btn-group">
-                    <button className="btn btn-transparent btn-xs btn-square" onClick={() => this.mathControl('√')}>√</button>
+                    <Button classNameSize={'sm'} classNameType={'off'} type={'X'} />
+                    {/*<button className="btn btn-transparent btn-xs btn-square" onClick={() => this.mathControl('√')}>√</button>
                     <button className="btn btn-transparent btn-xs btn-off" onClick={() => this.displayOff()}>OFF</button>
                     <button className="btn btn-transparent btn-sm btn-mc">MC</button>
                     <button className="btn btn-transparent btn-sm btn-mr">MR</button>
@@ -139,7 +154,7 @@ export class Calculator extends Component {
                     <button className="btn btn-transparent btn-sm btn-7" onClick={() => this.inputDigit(7)}>7</button>
                     <button className="btn btn-transparent btn-sm btn-8" onClick={() => this.inputDigit(8)}>8</button>
                     <button className="btn btn-transparent btn-sm btn-9" onClick={() => this.inputDigit(9)}>9</button>
-                    <button className="btn btn-transparent btn-sm btn-multiplication" onClick={() => this.mathControl('*')}>*</button>
+                    <button className="btn btn-transparent btn-sm btn-multiplication" onClick={() => this.mathControl('x')}>*</button>
                     <button className="btn btn-transparent btn-sm btn-sign-toggle" onClick={() => this.toggleSign()}>±</button>
                     <button className="btn btn-transparent btn-sm btn-4" onClick={() => this.inputDigit(4)}>4</button>
                     <button className="btn btn-transparent btn-sm btn-5" onClick={() => this.inputDigit(5)}>5</button>
@@ -153,7 +168,7 @@ export class Calculator extends Component {
                     <button className="btn btn-transparent btn-sm btn-0" onClick={() => this.inputDigit(0)}>0</button>
                     <button className="btn btn-transparent btn-sm btn-point" onClick={() => this.inputDot()}>.</button>
                     <button className="btn btn-transparent btn-sm btn-equal" onClick={() => this.mathControl('=')}>=</button>
-                    <button className="btn btn-transparent btn-lg btn-addition" onClick={() => this.mathControl('+')}>+</button>
+                    <button className="btn btn-transparent btn-lg btn-addition" onClick={() => this.mathControl('+')}>+</button>*/}
                 </div>
             </div>
         );
